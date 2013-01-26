@@ -14,10 +14,13 @@ function authUser() {
 
 function handleStatusChange(session) {
     console.log('Got the user\'s session: ', session);
-    
+
     if (session.authResponse) {
+        // Jim testing
+        console.log(session.authResponse);
+
         document.body.className = 'connected';
-        
+
         //Fetch user's id, name, and picture
         FB.api('/me', {
           fields: 'name, picture'
@@ -25,10 +28,10 @@ function handleStatusChange(session) {
         function(response) {
           if (!response.error) {
             user = response;
-            
+
             console.log('Got the user\'s name and picture: ');
             console.log(response);
-            
+
             //Update display of user name and picture
             if (document.getElementById('user-name')) {
               document.getElementById('user-name').innerHTML = user.name;
@@ -41,12 +44,12 @@ function handleStatusChange(session) {
               }
             }
           }
-          
+
           clearAction();
         });
     } else {
       document.body.className = 'not_connected';
-      
+
       clearAction();
     }
 }
@@ -60,9 +63,9 @@ function promptLogin() {
 function promptExtendedPermissions() {
   FB.login(function() {
     setAction("The 'user_likes' permission has been granted.", false);
-    
+
     setTimeout('clearAction();', 2000);
-    
+
     document.body.className = 'permissioned';
   }, {scope: 'user_likes'});
 }

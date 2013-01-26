@@ -51,6 +51,7 @@
   <div id="page-root" class="page">
       <div class="show_when_connected">
         <div id="welcome"><img id="user-picture" /><br /><span id="user-name"></span></div>
+        <div id="jimtest"></div>
       </div>
 
      <ul>
@@ -67,6 +68,8 @@
   <!-- Page: Login and Permissions -->
   <div id="page-Login" class="page">
     <p id="main-desc">
+      <div id="test">put something here</div>
+
       Facebook Platform uses the OAuth 2.0 protocol for logging a user into your app.
       The Login button in the top right of this app, shown when you're logged out, is a good example.<br /><br />
       <strong>Check out the mobile web app tutorial at <a href="http://developers.facebook.com/docs/mobile/web/build//">developers.facebook.com/docs/mobile/web/build/</a></strong>
@@ -304,6 +307,7 @@
   <script src="cdv-plugin-fb-connect.js"></script>
   <!-- facebook js sdk -->
   <script src="facebook_js_sdk.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
 
   <!--<script src="js/_config.js"></script>-->
   <script src="js/ui.js"></script>
@@ -326,6 +330,12 @@
 
           authUser();
           updateAuthElements();
+          console.log("starte");
+$.getJSON('https://youreawino.com/api/v1/wines.json', function(data) {
+  console.log(data);
+});
+
+console.log("end");
       });
   </script>
 
