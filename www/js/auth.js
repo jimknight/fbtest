@@ -16,8 +16,6 @@ function handleStatusChange(session) {
     console.log('Got the user\'s session: ', session);
 
     if (session.authResponse) {
-        // Jim testing
-        console.log(session.authResponse);
 
         document.body.className = 'connected';
 
@@ -31,6 +29,15 @@ function handleStatusChange(session) {
 
             console.log('Got the user\'s name and picture: ');
             console.log(response);
+
+            // Jim testing - get uid
+            console.log("id =" + response.id);
+               console.log("starte");
+$.getJSON('https://youreawino.com/api/v1/wines.json?uid=' + response.id, function(data) {
+  console.log(data);
+});
+
+console.log("end");
 
             //Update display of user name and picture
             if (document.getElementById('user-name')) {
