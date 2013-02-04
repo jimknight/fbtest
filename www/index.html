@@ -17,17 +17,29 @@
     <div data-role="page">
       <div data-role="header">
           <h1>You're a Wino</h1>
-          <a onclick="logout()" class="ui-btn-right" class="show_when_connected">Sign out</a>
+          <a onclick="logout()" class="ui-btn-right" class="show_when_connected" data-icon="delete">Logoff</a>
       </div><!-- /header -->
       <div data-role="content">
         <div class="show_when_not_connected">
-          <a onclick="promptLogin()" data-role="button" data-theme="b" >Sign in using Facebook</a>
+          <a onclick="promptLogin()" data-role="button" data-theme="b" >Login using Facebook</a>
         </div>
         <div class="show_when_connected">
-          <p>add wino cellar</p>
+          <h2>Wino Cellar</h2>
+          <ul data-role="listview" data-inset="true" id="wino-cellar">
+            <li>
+                <a href="#show" data-transition="slide">
+                    <img src='http://img.eetoolset.com/img?set=image%5B1037%2F842230.jpg%5D%2Csize%5B600x600%5D%2Cqual%5B80%5D&call=url%5Bfile%3Astd.image%5D' class='pic'/><h2>2009 Neil Ellis 'Elgin' Chardonnay 750ml</h2><p><img src="img/star_on.png"><img src="img/star_off.png"><img src="img/star_off.png"><img src="img/star_off.png"><img src="img/star_off.png"><br>You wrote: "delicious"</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src='http://citywinecellar.com/media/catalog/product/0/8/08678543105.jpg' class='pic'/><h2>2010 Cavit Alta Luna Pinot Grigio 750ml</h2><p><img src="img/star_off.png"><img src="img/star_off.png"><img src="img/star_off.png"><img src="img/star_off.png"><img src="img/star_off.png"><br>your comments</p>
+                </a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div data-role="footer" class="show_when_connected">
+      <div data-role="footer" class="show_when_connected" data-position="fixed">
         <h4><span id="user-name"></span></h4>
       </div>
     </div><!-- /page -->
