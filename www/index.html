@@ -5,6 +5,7 @@
       <meta name="format-detection" content="telephone=no" />
       <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
       <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
       <link rel="stylesheet" type="text/css" href="css/app.css">
       <title>Wino</title>
   </head>
@@ -16,9 +17,18 @@
     <div data-role="page">
       <div data-role="header">
           <h1>You're a Wino</h1>
+          <a onclick="logout()" class="ui-btn-right" class="show_when_connected">Sign out</a>
       </div><!-- /header -->
       <div data-role="content">
-        <a onclick="promptLogin()" data-role="button" data-theme="b" >Sign in using Facebook</a>
+        <div class="show_when_not_connected">
+          <a onclick="promptLogin()" data-role="button" data-theme="b" >Sign in using Facebook</a>
+        </div>
+        <div class="show_when_connected">
+          <p>add wino cellar</p>
+        </div>
+      </div>
+      <div data-role="footer" class="show_when_connected">
+        <h4><span id="user-name"></span></h4>
       </div>
     </div><!-- /page -->
 
